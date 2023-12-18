@@ -71,6 +71,7 @@ class General(commands.Cog, name="general"):
     @commands.hybrid_command(
         name="help", description="List all commands the bot has loaded."
     )
+    @app_commands.guilds(discord.Object(id=1160797031275700334)) 
     async def help(self, context: Context) -> None:
         prefix = self.bot.config["prefix"]
         embed = discord.Embed(
@@ -251,6 +252,7 @@ class General(commands.Cog, name="general"):
         name="bitcoin",
         description="Get the current price of bitcoin.",
     )
+
     async def bitcoin(self, context: Context) -> None:
         """
         Get the current price of bitcoin.
@@ -278,6 +280,7 @@ class General(commands.Cog, name="general"):
                         color=0xE02B2B,
                     )
                 await context.send(embed=embed)
+        
 
 
 async def setup(bot) -> None:
